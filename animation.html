@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <!-- Include necessary CSS files here -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset some default styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style the loading animation container */
+        #loading-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff; /* Change the background color as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Ensure it appears on top of other elements */
+        }
+
+        /* Style the logo */
+        #logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            /* Add more styling for your logo, like width, height, etc. */
+        }
+
+        /* Hide the main content initially */
+        #content {
+            display: none;
+            /* Center the content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Style the video */
+        #content video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Preserve aspect ratio while covering the container */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-animation">
+        <!-- Your loading animation content goes here -->
+        Loading...
+    </div>
+    <div id="logo">
+        <!-- Your logo goes here -->
+        <img src="your-logo.png" alt="Your Logo">
+    </div>
+    <div id="content">
+        <!-- The main content of your website goes here -->
+
+        <!-- JavaScript will create and append the video element here -->
+    </div>
+
+    <!-- Include necessary JS files here -->
+    
+    <!-- Include necessary JS files here -->
+
+<!-- Include necessary JS files here -->
+
+<!-- Include necessary JS files here -->
+<script>
+    // Wait for the document to be fully loaded
+    document.addEventListener("DOMContentLoaded", function() {
+        // Simulate content loading (replace this with your actual loading logic)
+        setTimeout(function() {
+            // Hide the loading animation and logo
+            document.getElementById("loading-animation").style.display = "none";
+            document.getElementById("logo").style.display = "none";
+
+            // Create and append the video element
+            var videoContainer = document.getElementById("content");
+            var video = document.createElement("video");
+            video.autoplay = true;
+            video.muted = true;
+            var source = document.createElement("source");
+            source.src = "Video.Guru_20231125_085435113.mp4";
+            source.type = "video/mp4";
+            video.appendChild(source);
+
+            // Append the video element to the content container
+            videoContainer.appendChild(video);
+
+            // Show the main content
+            document.getElementById("content").style.display = "flex";
+
+            // Open the hyperlink 2 seconds after the main content is displayed
+            setTimeout(function() {
+                // Navigate to the specified URL
+                window.location.href = "home.html"; // Replace with your actual URL
+            }, 4000); // Adjust the timeout as needed
+        }, 2000); // Adjust the timeout as needed
+    });
+</script>
+
+
+</body>
+</html>

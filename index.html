@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+            body {
+            font-family: Arial, sans-serif;
+            background-color:aqua;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            width: 80%; /* Adjust the width of the container as needed */
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 50%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .image-container {
+            width: 25%; /* Adjust the width of the image container as needed */
+            margin-left: 5%; /* Move the image a bit to the right */
+            margin-bottom: 20px; /* Add margin to create a gap between image and container */
+        }
+        img {
+            width: 210%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px; /* Optional: Add margin to separate the images */
+        }
+    </style>
+    <title>Music playlist </title>
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <form id="loginForm" onsubmit="return validateForm()">
+                <h1>Login</h1>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <button type="button" onclick="login()">Login</button>
+              
+                
+            </form>
+        </div>
+
+        <div class="image-container">
+            <!-- Add your first image source here -->
+            <img src="m22.png" alt="1">
+        </div>
+    </div>
+
+    <script>
+
+function login() {
+        if (validateForm()) {
+            window.location.href = "animation.html";
+        }
+    }
+        function validateForm() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (username === '' || password === '') {
+                alert('Username and password are required');
+                return false;
+            }
+
+            // Check the length of the username (you can adjust the minimum and maximum lengths)
+            if (username.length < 4 || username.length > 40) {
+                alert('Username must be between 4 and 40 characters');
+                return false;
+            }
+
+            // Check the complexity of the password (you can adjust these conditions)
+            if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}/.test(password)) {
+                alert('Password must contain at least one lowercase letter, one uppercase letter, one digit, and be at least 8 characters long');
+                return false;
+            }
+
+            // You can add more sophisticated validation here if needed
+
+            return true;
+        }
+    </script>
+</body>
+</html>
